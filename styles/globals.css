@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home-img {
+    background-image: url('../_assets/img/bg-home.png');
+}
+
+.weapons-bg {
+    background-image: url('../_assets/img/bg-weapons.png');
+}
