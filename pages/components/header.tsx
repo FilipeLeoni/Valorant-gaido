@@ -30,7 +30,7 @@ export const Header: NextPage = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
+      className="fixed left-0 top-0 w-full z-20 ease-in duration-300"
     >
       <div className="mx-6 flex md:justify-between justify-evenly items-center p-2">
         <Link href="/">
@@ -39,27 +39,40 @@ export const Header: NextPage = () => {
           </a>
         </Link>
         <ul className="md:hidden flex text-sm text-white">
-          <motion.li className="p-4 hover:text-pink" whileTap={{ scale: 0.8 }}>
+          <motion.li
+            className="p-4 hover:text-pink"
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Link href="/">HOME</Link>
           </motion.li>
-          <motion.li className="p-4 hover:text-pink" whileTap={{ scale: 0.8 }}>
+          <motion.li
+            className="p-4 hover:text-pink"
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Link href="/Agents">
               <a href="/Agents">AGENTS</a>
             </Link>
           </motion.li>
-          <motion.li className="p-4 hover:text-pink" whileTap={{ scale: 0.8 }}>
+          <motion.li
+            className="p-4 hover:text-pink"
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Link href="/">WEAPONS</Link>
           </motion.li>
-          <motion.li className="p-4 hover:text-pink" whileTap={{ scale: 0.8 }}>
+          <motion.li
+            className="p-4 hover:text-pink"
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Link href="/">MAPS</Link>
           </motion.li>
         </ul>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          className="py-2 px-8 text-white bg-pink rounded-lg text-sm font-medium md:hidden flex"
-        >
+        <button className="py-2 px-8 text-white bg-pink rounded-lg text-sm font-medium md:hidden flex">
           DOWNLOAD
-        </motion.button>
+        </button>
         {/* Mobile Button*/}
         <motion.div
           onClick={handleNav}
@@ -101,9 +114,9 @@ export const Header: NextPage = () => {
                 <a>MAPS</a>
               </Link>
             </li>
-            <motion.button className="py-2 px-8 mt-3 text-white bg-pink rounded-lg text-sm font-medium">
+            <button className="py-2 px-8 mt-3 text-white bg-pink rounded-lg text-sm font-medium">
               DOWNLOAD
-            </motion.button>
+            </button>
           </ul>
         </div>
       </div>

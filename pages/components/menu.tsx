@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
+import api from "../api/api";
 
 const itemVariants: Variants = {
   open: {
@@ -17,7 +18,7 @@ export default function Menu() {
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      className="w-[300px] p-3"
+      className="w-[300px] absolute z-10"
     >
       <motion.button
         className="rounded-lg bg-white px-5 py-2 mb-2 w-[300px] flex items-center gap-5 justify-between text-lg"

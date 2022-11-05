@@ -4,4 +4,10 @@ const nextConfig = {
   swcMinify: true,
 }
 
+module.exports = {
+  images: {
+    domains: ['media.valorant-api.com'],
+  },
+}
+
 module.exports = nextConfig
