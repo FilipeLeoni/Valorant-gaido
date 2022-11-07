@@ -5,32 +5,38 @@ import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import valorantSmLogo from "../../_assets/img/valorant-logo.svg";
 import { motion } from "framer-motion";
+import classnames from "clsx";
 
 export const Header: NextPage = () => {
   const [nav, setNav] = useState(false);
-  const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState("black");
+  const [scrollY, setScrollY] = useState<number>(0);
 
   const handleNav: any = () => {
     setNav(!nav);
   };
 
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#1e1e1e");
-        setTextColor("#ffffff");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-      }
-    };
-    window.addEventListener("scroll", changeColor);
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <div
-      style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-20 ease-in duration-300"
+      className={classnames(
+        "fixed",
+        "left-0",
+        "top-0",
+        "w-full",
+        "z-20",
+        "ease-in",
+        "duration-300",
+        {
+          "bg-gray-darker": scrollY >= 90,
+          "bg-transparent": scrollY < 90,
+        }
+      )}
     >
       <div className="mx-6 flex md:justify-between justify-evenly items-center p-2">
         <Link href="/">

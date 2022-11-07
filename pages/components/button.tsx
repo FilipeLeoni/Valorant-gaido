@@ -1,17 +1,13 @@
-import { NextPage } from "next";
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const Button: any = (props: any) => {
-  const glowVariants: any = {
-    initial: {
-      opacity: 0,
-    },
-    hover: {
-      opacity: 1,
-    },
-  };
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  link: string;
+  title: string;
+}
+
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   return (
     <>
       <motion.div whileTap={{ scale: 0.8 }} className="flex xl:inline">
