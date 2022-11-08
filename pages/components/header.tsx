@@ -45,36 +45,34 @@ export const Header: NextPage = () => {
           </a>
         </Link>
         <ul className="md:hidden flex text-sm text-white">
-          <motion.li
-            className="p-4 hover:text-pink"
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <Link href="/">HOME</Link>
-          </motion.li>
-          <motion.li
-            className="p-4 hover:text-pink"
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <Link href="/Agents">
-              <a href="/Agents">AGENTS</a>
+          <li className="p-4 ">
+            <Link href="/">
+              <a className="hover:text-pink hover:ease-in-out hover:duration-200">
+                HOME
+              </a>
             </Link>
-          </motion.li>
-          <motion.li
-            className="p-4 hover:text-pink"
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <Link href="/">WEAPONS</Link>
-          </motion.li>
-          <motion.li
-            className="p-4 hover:text-pink"
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <Link href="/">MAPS</Link>
-          </motion.li>
+          </li>
+          <li className="p-4 ">
+            <Link href="/Agents">
+              <a className="hover:text-pink hover:ease-in-out hover:duration-200">
+                AGENTS
+              </a>
+            </Link>
+          </li>
+          <li className="p-4 ">
+            <Link href="/">
+              <a className="hover:text-pink hover:ease-in-out hover:duration-200">
+                WEAPONS
+              </a>
+            </Link>
+          </li>
+          <li className="p-4">
+            <Link href="/">
+              <a className="hover:text-pink hover:ease-in-out hover:duration-200">
+                MAPS
+              </a>
+            </Link>
+          </li>
         </ul>
         <button className="py-2 px-8 text-white bg-pink rounded-lg text-sm font-medium md:hidden flex">
           DOWNLOAD

@@ -12,16 +12,19 @@ export const Card: React.FC<Props> = ({
   return (
     <>
       <motion.div
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.05 }}
         className="w-[280px] h-[400px] bg-pink rounded-lg cursor-pointer "
       >
         <div>
           <div className="absolute w-[290px] ml-[-4px] opacity-50 mt-[-28px] flex justify-center items-center ">
             <Image src={background} width="290px" height="366px" />
           </div>
-          <div className="w-[400px] ml-[-53px] relative object-cover h-[500px]">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="w-[400px] ml-[-53px] relative object-cover h-[500px]"
+          >
             <Image src={fullPortraitV2} width="400px" height="363px" />
-          </div>
+          </motion.div>
         </div>
         <div className="relative mt-[-310px] text-blue pt-28 bg-gradient-to-t rounded from-pink via-pink to-transparent justify-center flex">
           <div className="items-center flex flex-col">

@@ -2,9 +2,10 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import Menu from "../components/menu";
 import { Card } from "../components/card";
-import api from "../api/api";
 import { Agent } from "../entities/agent";
+import { motion } from "framer-motion";
 import { getAgents } from "../api/valorant-service";
+import { Title } from "../components/pageTitle";
 
 const agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
@@ -22,18 +23,27 @@ const agents: NextPage = () => {
 
   return (
     <>
-      <div className="home-img bg-center bg-cover h-auto bg-fixed">
-        <div className="pt-44 justify-center flex mb-32">
-          <Menu />
-        </div>
-        <div className="justify-center flex">
-          <div className="mr-12"></div>
-          <div className="grid grid-cols-4 gap-10">
-            {agents.map((agent) => (
-              <Card key={agent.uuid} data={agent} />
-            ))}
+      <div className="home-img bg-center bg-cover h-auto min-h-screen bg-fixed">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="pt-28 justify-center flex mb-16">
+            <Title title="AGENTS" />
           </div>
-        </div>
+          <div className="justify-center flex mb-24">
+            <Menu />
+          </div>
+          <div className="justify-center flex">
+            <div className="mr-12"></div>
+            <div className="grid grid-cols-4 gap-10 mb-24">
+              {agents.map((agent) => (
+                <Card key={agent.uuid} data={agent} />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </>
   );
