@@ -19,9 +19,10 @@ export default function Menu() {
       initial={false}
       animate={isOpen ? "open" : "closed"}
       className="w-[300px] absolute z-10"
+      style={{ zIndex: isOpen ? "10" : "0" }}
     >
       <motion.button
-        className="rounded-lg bg-white px-5 py-2 mb-2 w-[300px] flex items-center gap-5 justify-between text-lg"
+        className="rounded-lg bg-white text-gray-darker px-5 py-2 mb-2 w-[300px] flex items-center gap-5 justify-between text-lg"
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -63,7 +64,10 @@ export default function Menu() {
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        <div className="bg-white p-6 text-lg">
+        <div className="bg-white text-gray-darker p-6 text-lg">
+          <motion.li className="mb-2" variants={itemVariants}>
+            <a href="/">All Agents</a>
+          </motion.li>
           <motion.li className="mb-2" variants={itemVariants}>
             <a href="/">Initiators</a>
           </motion.li>
