@@ -17,14 +17,14 @@ const agents: NextPage = () => {
         const agents = await getAgents({ isPlayableCharacter: true });
         setAgents(agents);
       } catch (error) {
-        console.log("erou bixo");
+        console.log("Error trying to search for agents");
       }
     })();
   }, []);
 
   return (
     <>
-      <div className="home-img bg-center bg-cover h-auto min-h-screen bg-fixed">
+      <div className="home-img  bg-center bg-cover h-auto min-h-screen bg-fixed">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -32,8 +32,11 @@ const agents: NextPage = () => {
         >
           <div className="pt-28 justify-center flex mb-16 text-center">
             <div>
-              <Title title="AGENTS" />
-              <Description description="Agentes com habilidades adaptativas, rápidas e letais, que criam oportunidades para você exibir sua mecânica de tiro. " />
+              <Title>AGENTS</Title>
+              <Description>
+                Agents with adaptive, fast, and lethal abilities that create
+                opportunities for you to show off your shooting mechanics.
+              </Description>
             </div>
           </div>
           <div className="justify-center flex mb-24">

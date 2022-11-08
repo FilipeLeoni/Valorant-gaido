@@ -1,7 +1,9 @@
-type descriptionProps = {
-  description: string;
+import { ReactNode } from "react";
+
+type DescriptionProps = {
+  children: ReactNode;
 };
 
-export const Description = ({ description }: descriptionProps) => {
-  return <p className="text-gray-lighter mt-4 text-sm">{description}</p>;
+export const Description = ({ children }: DescriptionProps) => {
+  return <p className="text-gray-lighter mt-4 text-sm">{children}</p>;
 };
