@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center">
+<img src="https://user-images.githubusercontent.com/100960828/200614385-df0ba01b-bfcb-4a68-bf84-60947a0d1dde.svg" width="200px" alt="Valorant"/>
+</div>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<h1 align="center"> Valorant Gaido </h1>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Descrição
+<p> Valorant Gaido é um projeto pessoal que estou desenvolvendo. Se trata de um guia não oficial de valorant, onde terá as informações sobre agentes, armas, mapas, ranks competitivo, etc.
+</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Progresso
+> :construction: Projeto em construção :construction:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Visão geral
+<p> Um pouco de como está ficando o projeto</p>
 
-## Learn More
+![Captura de tela 2022-11-08 125919](https://user-images.githubusercontent.com/100960828/200614051-d8155cf6-c2ff-4b72-87d2-ab07cb6e4f94.png)
 
-To learn more about Next.js, take a look at the following resources:
+![Captura de tela 2022-11-08 125853](https://user-images.githubusercontent.com/100960828/200614047-a5314805-27e7-4550-8730-571500ef04e1.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
