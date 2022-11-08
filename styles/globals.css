@@ -1,4 +1,21 @@
 @tailwind base;
+
+:root {
+    --primary: #1E1E1E;
+    --secondary: #FD4556;
+  }
+*::-webkit-scrollbar {
+    width: 15px;
+  }
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+    border: 3px solid var(--primary);
+  } 
+
 @tailwind components;
 @tailwind utilities;
 
@@ -9,3 +26,4 @@
 .weapons-bg {
     background-image: url('../_assets/img/bg-weapons.png');
 }
+

@@ -1,8 +1,9 @@
-import { NextPage } from "next";
-type titleProps = {
-  title: string;
+import { ReactNode } from "react";
+
+type TitleProps = {
+  children: ReactNode;
 };
 
-export const Title = ({ title }: titleProps) => {
-  return <h1 className="font-semibold text-2xl text-white">{title}</h1>;
+export const Title = ({ children }: TitleProps) => {
+  return <h1 className="font-semibold text-2xl text-white">{children}</h1>;
 };
