@@ -6,6 +6,7 @@ import { Agent } from "../entities/agent";
 import { motion } from "framer-motion";
 import { getAgents } from "../api/valorant-service";
 import { Title } from "../components/pageTitle";
+import { Description } from "../components/description";
 
 const agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
@@ -29,8 +30,11 @@ const agents: NextPage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="pt-28 justify-center flex mb-16">
-            <Title title="AGENTS" />
+          <div className="pt-28 justify-center flex mb-16 text-center">
+            <div>
+              <Title title="AGENTS" />
+              <Description description="Agentes com habilidades adaptativas, rápidas e letais, que criam oportunidades para você exibir sua mecânica de tiro. " />
+            </div>
           </div>
           <div className="justify-center flex mb-24">
             <Menu />
