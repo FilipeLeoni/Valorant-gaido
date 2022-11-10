@@ -8,17 +8,17 @@ import {
   RiInstagramFill,
   RiGithubFill,
 } from "react-icons/ri";
-import { Button } from "../components/button";
+import { Button } from "../../components/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Titles } from "../components/titlesComponent";
+import { Titles } from "../../components/titlesComponent";
 import Agents from "../../_assets/img/AgentsImg.png";
 import Fireball from "../../_assets/img/fireball.png";
 import Kunai from "../../_assets/img/kunai.png";
 import allAgents from "../../_assets/img/allAgents.png";
 import map from "../../_assets/img/map.png";
 
-export const HomePage: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <section className="home-img bg-center bg-cover h-screen">
@@ -177,3 +177,5 @@ export const HomePage: NextPage = () => {
     </>
   );
 };
+
+export default HomePage;

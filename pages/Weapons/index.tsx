@@ -1,7 +1,7 @@
-import Dialog from "../components/dialog";
+import Dialog from "../../components/dialog";
 import { NextPage } from "next";
-import { Description } from "../components/description";
-import { Title } from "../components/pageTitle";
+import { Description } from "../../components/description";
+import { Title } from "../../components/pageTitle";
 import React from "react";
 
 const Weapons: NextPage = () => {

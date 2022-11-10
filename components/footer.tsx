@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import riot from "../../_assets/img/riot-logo.svg";
+import riot from "../_assets/img/riot-logo.svg";
 import { motion } from "framer-motion";
 import {
   RiLinkedinBoxFill,

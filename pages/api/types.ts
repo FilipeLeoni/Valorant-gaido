@@ -1,4 +1,4 @@
-import { Agent } from "../entities/agent"
+import { Agent } from "../../entities/agent"
 
 export interface AgentResponse {
     status: string
