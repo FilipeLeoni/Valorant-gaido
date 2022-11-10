@@ -41,7 +41,7 @@ export const Header: NextPage = () => {
       <div className="mx-6 flex md:justify-between justify-evenly items-center p-2">
         <Link href="/">
           <a className="w-[50px] h-[41px] p-1">
-            <Image src={valorantSmLogo}></Image>
+            <Image src={valorantSmLogo} alt="Valorant Logo"></Image>
           </a>
         </Link>
         <ul className="md:hidden flex text-sm text-white">
@@ -99,24 +99,16 @@ export const Header: NextPage = () => {
         >
           <ul>
             <li className="p-4 text-3xl hover:text-gray-300">
-              <Link href="/">
-                <a href="/">HOME</a>
-              </Link>
+              <Link href="/">HOME</Link>
             </li>
             <li className="p-4 text-3xl hover:text-gray-300">
-              <Link href="/agents">
-                <a href="/agents">AGENTS</a>
-              </Link>
+              <Link href="/agents">AGENTS</Link>
             </li>
             <li className="p-4 text-3xl hover:text-gray-300">
-              <Link href="/">
-                <a>WEAPONS</a>
-              </Link>
+              <Link href="/weapons">WEAPONS</Link>
             </li>
             <li className="p-4 text-3xl hover:text-gray-300">
-              <Link href="/">
-                <a>MAPS</a>
-              </Link>
+              <Link href="/">MAPS</Link>
             </li>
             <button className="py-2 px-8 mt-3 text-white bg-pink rounded-lg text-sm font-medium">
               DOWNLOAD

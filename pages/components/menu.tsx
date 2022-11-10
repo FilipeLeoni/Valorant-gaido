@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import api from "../api/api";
+import Link from "next/link";
 
 const itemVariants: Variants = {
   open: {
@@ -66,19 +66,19 @@ export default function Menu() {
       >
         <div className="bg-white text-gray-darker p-6 text-lg">
           <motion.li className="mb-2" variants={itemVariants}>
-            <a href="/">All Agents</a>
+            <Link href="/">All Agents</Link>
           </motion.li>
           <motion.li className="mb-2" variants={itemVariants}>
-            <a href="/">Initiators</a>
+            <Link href="/">Initiators</Link>
           </motion.li>
           <motion.li className="mb-2" variants={itemVariants}>
-            <a href="/">Sentinels</a>
+            <Link href="/">Sentinels</Link>
           </motion.li>
           <motion.li className="mb-2" variants={itemVariants}>
-            <a href="/">Duelists</a>
+            <Link href="/">Duelists</Link>
           </motion.li>
           <motion.li className="" variants={itemVariants}>
-            <a href="/">Controllers</a>
+            <Link href="/">Controllers</Link>
           </motion.li>
         </div>
       </motion.ul>

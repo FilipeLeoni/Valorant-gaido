@@ -34,7 +34,11 @@ export const HomePage: NextPage = () => {
               <br /> Welcome to Gaido
             </h2>
 
-            <Image className="max-w-[200px]" src={ValorantName}></Image>
+            <Image
+              className="max-w-[200px]"
+              src={ValorantName}
+              alt="Valorant"
+            ></Image>
 
             <h3 className="max-w-[500px] mt-8 md:mt-5 mb-16 leading-5 lg:text-sm">
               A simple unofficial guide to valorant where you will find
@@ -91,7 +95,7 @@ export const HomePage: NextPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
           >
-            <Image src={FadeBg}></Image>
+            <Image src={FadeBg} alt="Fade Agent"></Image>
           </motion.div>
         </div>
       </section>
@@ -115,7 +119,7 @@ export const HomePage: NextPage = () => {
                 animate={{ y: [15, -15] }}
                 transition={{ yoyo: Infinity, ease: "easeOut", duration: 3 }}
               >
-                <Image src={Fireball}></Image>
+                <Image src={Fireball} alt="Fireball"></Image>
               </motion.div>
               <motion.div
                 className="w-[100px] pt-44 right-[210px] absolute"
@@ -125,14 +129,14 @@ export const HomePage: NextPage = () => {
                   duration: 3,
                 }}
               >
-                <Image src={Kunai}></Image>
+                <Image src={Kunai} alt="Jett Knife"></Image>
               </motion.div>
               <motion.div className="max-w-[550px] max-h[647px] pt-20 absolute right-36">
-                <Image src={Agents}></Image>
+                <Image src={Agents} alt="Jett and Phoenix"></Image>
               </motion.div>
             </div>
             <div className="hidden xl:inline mx-4 mt-8 mb-16">
-              <Image src={allAgents}></Image>
+              <Image src={allAgents} alt="Valorant Agents"></Image>
             </div>
           </div>
         </div>
@@ -166,7 +170,7 @@ export const HomePage: NextPage = () => {
             <Button link="/" title="CHECK THE MAPS" />
           </div>
           <div className="flex self-end  xl:justify-center">
-            <Image src={map} />
+            <Image src={map} alt="Map" />
           </div>
         </div>
       </section>
