@@ -1,12 +1,12 @@
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import Menu from "../components/menu";
-import { Card } from "../components/card";
-import { Agent } from "../entities/agent";
+import Menu from "../../components/menu";
+import { Card } from "../../components/card";
+import { Agent } from "../../entities/agent";
 import { motion } from "framer-motion";
 import { getAgents } from "../api/valorant-service";
-import { Title } from "../components/pageTitle";
-import { Description } from "../components/description";
+import { Title } from "../../components/pageTitle";
+import { Description } from "../../components/description";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);

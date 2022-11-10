@@ -3,8 +3,8 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import classnames from "clsx";
 import Image from "next/image";
 import React, { Fragment, useState } from "react";
-import Vandal from "../../_assets/img/vandal.png";
-import Coin from "../../_assets/img/coin.png";
+import Vandal from "../_assets/img/vandal.png";
+import Coin from "../_assets/img/coin.png";
 import { RiCloseFill } from "react-icons/ri";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 

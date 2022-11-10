@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import valorantSmLogo from "../../_assets/img/valorant-logo.svg";
+import valorantSmLogo from "../_assets/img/valorant-logo.svg";
 import { motion } from "framer-motion";
 import classnames from "clsx";
 
