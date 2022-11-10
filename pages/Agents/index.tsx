@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Menu from "../components/menu";
 import { Card } from "../components/card";
 import { Agent } from "../entities/agent";
@@ -8,7 +8,7 @@ import { getAgents } from "../api/valorant-service";
 import { Title } from "../components/pageTitle";
 import { Description } from "../components/description";
 
-const agents: NextPage = () => {
+const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ const agents: NextPage = () => {
   );
 };
 
-export default agents;
+export default Agents;
