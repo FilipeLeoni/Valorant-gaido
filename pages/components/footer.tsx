@@ -25,7 +25,7 @@ export const Footer: NextPage = () => {
             whileHover={{ scale: 1.2 }}
             href="https://www.riotgames.com/pt-br"
           >
-            <Image src={riot} />
+            <Image src={riot} alt="Riot Logo" />
           </motion.a>
         </Link>
       </div>
