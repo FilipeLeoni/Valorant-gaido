@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import Menu from "../../components/menu";
+import { Menu } from "../../components/menu";
 import { Card } from "../../components/card";
 import { Agent } from "../../entities/agent";
 import { motion } from "framer-motion";
@@ -10,12 +10,14 @@ import { Description } from "../../components/description";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
-
+  const [filtered, setFiltered] = useState<Agent[]>([]);
+  const [activeRole, setActiveRole] = useState("");
   useEffect(() => {
     (async () => {
       try {
         const agents = await getAgents({ isPlayableCharacter: true });
         setAgents(agents);
+        setFiltered(agents);
       } catch (error) {
         console.log("Error trying to search for agents");
       }
@@ -40,15 +42,20 @@ const Agents: NextPage = () => {
             </div>
           </div>
           <div className="justify-center flex mb-24">
-            <Menu />
+            <Menu
+              agents={agents}
+              setFiltered={setFiltered}
+              activeRole={activeRole}
+              setActiveRole={setActiveRole}
+            />
           </div>
           <div className="justify-center flex">
             <div className="mr-12"></div>
-            <div className="grid grid-cols-4 gap-10 mb-24">
-              {agents.map((agent) => (
+            <motion.div className="grid grid-cols-4 gap-10 mb-24">
+              {filtered.map((agent) => (
                 <Card key={agent.uuid} data={agent} />
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
