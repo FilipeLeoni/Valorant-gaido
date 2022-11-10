@@ -37,11 +37,11 @@ const Dialog: any = () => {
             <h2 className="justify-center flex mb-6 text-3xl font-semibold text-gray-dark">
               Vandal
             </h2>
-            <Image src={Vandal} width="300px" height="90px" />
+            <Image src={Vandal} width="300px" height="90px" alt="Weapon" />
           </div>
           <div className="ml-8 mt-4 mb-3 flex gap-2 text-xl text-gray-dark font-semibold ">
             <div className="mt-[2px]">
-              <Image src={Coin} width="17px" height="17px" />
+              <Image src={Coin} width="17px" height="17px" alt="Coin" />
             </div>
             <p>2.900</p>
           </div>
@@ -98,7 +98,7 @@ const Dialog: any = () => {
               dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
               whileTap={{ cursor: "grabbing" }}
             >
-              <Image src={Vandal} draggable="false" />
+              <Image src={Vandal} draggable="false" alt="Weapon" />
             </motion.div>
 
             <div className="grid grid-cols-2 w-[320px] ml-[70px] my-8 text-gray-dark">
