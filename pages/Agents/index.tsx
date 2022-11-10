@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Menu } from "../../components/menu";
 import { Card } from "../../components/card";
 import { Agent } from "../../entities/agent";
@@ -7,17 +7,23 @@ import { motion } from "framer-motion";
 import { getAgents } from "../api/valorant-service";
 import { Title } from "../../components/pageTitle";
 import { Description } from "../../components/description";
+import { AgentRoles } from "../../utils/constants";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
-  const [filtered, setFiltered] = useState<Agent[]>([]);
-  const [activeRole, setActiveRole] = useState("");
+  const [activeRoleId, setActiveRoleIndex] = useState<number>(0);
+
+  const filtered = activeRoleId
+    ? agents.filter(agent => agent.role.displayName.includes(AgentRoles[activeRoleId]))
+    : agents;
+
+  const onMenuChange = (roleId: number) => setActiveRoleIndex(roleId);
+
   useEffect(() => {
     (async () => {
       try {
         const agents = await getAgents({ isPlayableCharacter: true });
         setAgents(agents);
-        setFiltered(agents);
       } catch (error) {
         console.log("Error trying to search for agents");
       }
@@ -43,10 +49,9 @@ const Agents: NextPage = () => {
           </div>
           <div className="justify-center flex mb-24">
             <Menu
-              agents={agents}
-              setFiltered={setFiltered}
-              activeRole={activeRole}
-              setActiveRole={setActiveRole}
+              onMenuChange={onMenuChange}
+              selectedItemId={activeRoleId}
+              items={AgentRoles}
             />
           </div>
           <div className="justify-center flex">

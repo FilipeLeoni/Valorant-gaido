@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import { MenuProps } from "../pages/api/types";
+import classnames from 'clsx';
+export interface MenuProps {
+  onMenuChange: (value: any) => void;
+  selectedItemId: number;
+  items: any[];
+}
 
 const itemVariants: Variants = {
   open: {
@@ -11,23 +16,9 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-export const Menu: React.FC<MenuProps> = ({
-  setActiveRole,
-  agents,
-  setFiltered,
-  activeRole,
-}) => {
+export const Menu: React.FC<MenuProps> = ({ onMenuChange, selectedItemId, items }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (activeRole === "") {
-      setFiltered(agents);
-    }
-    const filtered = agents.filter((agents) =>
-      agents.role.displayName.includes(activeRole)
-    );
-    setFiltered(filtered);
-  }, [activeRole, agents, setFiltered]);
   return (
     <motion.nav
       initial={false}
@@ -40,7 +31,7 @@ export const Menu: React.FC<MenuProps> = ({
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {activeRole}
+        {items[selectedItemId]}
         <motion.div
           variants={{
             open: { rotate: 180 },
@@ -79,28 +70,19 @@ export const Menu: React.FC<MenuProps> = ({
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
         <div
-          className="bg-white text-gray-darker p-6 text-lg"
+          className="bg-white text-gray-darker text-lg"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <motion.li className="mb-2" variants={itemVariants}>
-            <button onClick={() => setActiveRole("")}>All Agents</button>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <button onClick={() => setActiveRole("Initiator")}>
-              Initiators
-            </button>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <button onClick={() => setActiveRole("Sentinel")}>Sentinels</button>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <button onClick={() => setActiveRole("Duelist")}>Duelists</button>
-          </motion.li>
-          <motion.li className="" variants={itemVariants}>
-            <button onClick={() => setActiveRole("Controller")}>
-              Controllers
-            </button>
-          </motion.li>
+          {items.map((item: string, index: number) => (
+            <motion.li className={classnames(
+              "mb-2",
+              "cursor-pointer",
+              "hover:bg-gray-dark",
+              "p-3",
+            )} variants={itemVariants} key={index} onClick={() => onMenuChange(index)}>
+              {item}
+            </motion.li>
+          ))}
         </div>
       </motion.ul>
     </motion.nav>
