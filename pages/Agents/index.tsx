@@ -1,15 +1,23 @@
 import { NextPage } from "next";
-import React, { useEffect, useState } from "react";
-import Menu from "../../components/menu";
+import React, { useEffect, useMemo, useState } from "react";
+import { Menu } from "../../components/menu";
 import { Card } from "../../components/card";
 import { Agent } from "../../entities/agent";
 import { motion } from "framer-motion";
 import { getAgents } from "../api/valorant-service";
 import { Title } from "../../components/pageTitle";
 import { Description } from "../../components/description";
+import { AgentRoles } from "../../utils/constants";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
+  const [activeRoleId, setActiveRoleIndex] = useState<number>(0);
+
+  const filtered = activeRoleId
+    ? agents.filter(agent => agent.role.displayName.includes(AgentRoles[activeRoleId]))
+    : agents;
+
+  const onMenuChange = (roleId: number) => setActiveRoleIndex(roleId);
 
   useEffect(() => {
     (async () => {
@@ -40,15 +48,19 @@ const Agents: NextPage = () => {
             </div>
           </div>
           <div className="justify-center flex mb-24">
-            <Menu />
+            <Menu
+              onMenuChange={onMenuChange}
+              selectedItemId={activeRoleId}
+              items={AgentRoles}
+            />
           </div>
           <div className="justify-center flex">
             <div className="mr-12"></div>
-            <div className="grid grid-cols-4 gap-10 mb-24">
-              {agents.map((agent) => (
+            <motion.div className="grid grid-cols-4 gap-10 mb-24">
+              {filtered.map((agent) => (
                 <Card key={agent.uuid} data={agent} />
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import Link from "next/link";
+import classnames from 'clsx';
+export interface MenuProps {
+  onMenuChange: (value: any) => void;
+  selectedItemId: number;
+  items: any[];
+}
 
 const itemVariants: Variants = {
   open: {
@@ -11,7 +16,7 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-export default function Menu() {
+export const Menu: React.FC<MenuProps> = ({ onMenuChange, selectedItemId, items }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,7 +31,7 @@ export default function Menu() {
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        Choose Class
+        {items[selectedItemId]}
         <motion.div
           variants={{
             open: { rotate: 180 },
@@ -64,24 +69,22 @@ export default function Menu() {
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        <div className="bg-white text-gray-darker p-6 text-lg">
-          <motion.li className="mb-2" variants={itemVariants}>
-            <Link href="/">All Agents</Link>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <Link href="/">Initiators</Link>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <Link href="/">Sentinels</Link>
-          </motion.li>
-          <motion.li className="mb-2" variants={itemVariants}>
-            <Link href="/">Duelists</Link>
-          </motion.li>
-          <motion.li className="" variants={itemVariants}>
-            <Link href="/">Controllers</Link>
-          </motion.li>
+        <div
+          className="bg-white text-gray-darker text-lg"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {items.map((item: string, index: number) => (
+            <motion.li className={classnames(
+              "mb-2",
+              "cursor-pointer",
+              "hover:bg-gray-dark",
+              "p-3",
+            )} variants={itemVariants} key={index} onClick={() => onMenuChange(index)}>
+              {item}
+            </motion.li>
+          ))}
         </div>
       </motion.ul>
     </motion.nav>
   );
-}
+};

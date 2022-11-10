@@ -15,8 +15,8 @@ export const Card: React.FC<Props> = ({
   const control = useAnimation();
   const [ref, inView] = useInView();
   const cardVariant = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+    hidden: { opacity: 0, scale: 1 },
   };
 
   useEffect(() => {
@@ -31,6 +31,7 @@ export const Card: React.FC<Props> = ({
       variants={cardVariant}
       initial="hidden"
       animate={control}
+      layout
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
