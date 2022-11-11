@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import classnames from 'clsx';
+import classnames from "clsx";
 export interface MenuProps {
   onMenuChange: (value: any) => void;
   selectedItemId: number;
@@ -16,7 +16,11 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-export const Menu: React.FC<MenuProps> = ({ onMenuChange, selectedItemId, items }) => {
+export const Menu: React.FC<MenuProps> = ({
+  onMenuChange,
+  selectedItemId,
+  items,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,7 +31,7 @@ export const Menu: React.FC<MenuProps> = ({ onMenuChange, selectedItemId, items 
       style={{ zIndex: isOpen ? "10" : "0" }}
     >
       <motion.button
-        className="rounded-lg bg-white text-gray-darker px-5 py-2 mb-2 w-[300px] flex items-center gap-5 justify-between text-lg"
+        className="rounded-lg bg-white text-gray-darker px-5 py-2 mb-2 w-[300px] flex items-center gap-5 justify-between font-SansPro text-xl"
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -70,16 +74,24 @@ export const Menu: React.FC<MenuProps> = ({ onMenuChange, selectedItemId, items 
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
         <div
-          className="bg-white text-gray-darker text-lg"
+          className="bg-white text-gray-darker text-xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {items.map((item: string, index: number) => (
-            <motion.li className={classnames(
-              "mb-2",
-              "cursor-pointer",
-              "hover:bg-gray-dark",
-              "p-3",
-            )} variants={itemVariants} key={index} onClick={() => onMenuChange(index)}>
+            <motion.li
+              className={classnames(
+                "cursor-pointer",
+                "hover:bg-gray-darker",
+                "hover:text-gray",
+                "px-5",
+                "py-2",
+                "rounded",
+                "font-SansPro"
+              )}
+              variants={itemVariants}
+              key={index}
+              onClick={() => onMenuChange(index)}
+            >
               {item}
             </motion.li>
           ))}

@@ -67,8 +67,10 @@ export const Card: React.FC<Props> = ({
           </div>
           <div className="relative mt-[-310px] text-blue pt-28 bg-gradient-to-t rounded from-pink via-pink to-transparent justify-center flex">
             <div className="items-center flex flex-col">
-              <h2 className="text-xl font-semibold ">{displayName}</h2>
-              <p className="mb-2 leading-4 text-sm">{role.displayName}</p>
+              <h2 className="text-xl font-semibold">{displayName}</h2>
+              <p className="mb-2 leading-4 tracking-tight font-SansPro">
+                {role.displayName}
+              </p>
               <div className="w-6">
                 <Image
                   src={role.displayIcon}

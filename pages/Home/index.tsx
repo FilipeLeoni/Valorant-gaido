@@ -40,7 +40,7 @@ const HomePage: NextPage = () => {
               alt="Valorant"
             ></Image>
 
-            <h3 className="max-w-[500px] mt-8 md:mt-5 mb-16 leading-5 lg:text-sm">
+            <h3 className="max-w-[550px] mt-8 md:mt-5 mb-16 leading-5 lg:text-sm font-SansPro text-lg">
               A simple unofficial guide to valorant where you will find
               information about weapons, agents, maps and their in-game stats,
               learn more about the project by clicking the buttons below.
@@ -111,7 +111,7 @@ const HomePage: NextPage = () => {
                 subtitle="PUT DOWN THE SPIKE"
                 description="More than weapons and ammo, VALORANT includes agents with adaptive, fast, and lethal abilities that create opportunities for you to show off your shooting mechanics. Each Operator is unique, as are the highlights of each match!"
               />
-              <Button link="/" title="SEE THE AGENTS" />
+              <Button link="/Agents" title="SEE THE AGENTS" />
             </div>
             <div className="flex xl:hidden">
               <motion.div
@@ -152,7 +152,7 @@ const HomePage: NextPage = () => {
               subtitle="PHANTOM OR VANDAL?"
               description="Guns are arguably the most important aspect of the game, so how do you choose which gun best suits you, your play style, and the situation? This guide will break down each gun as well as their pros and cons to help make your decision easier."
             />
-            <Button link="/" title="SEE ALL WEAPONS" className="mb-2" />
+            <Button link="/Weapons" title="SEE ALL WEAPONS" className="mb-2" />
           </div>
         </div>
       </section>

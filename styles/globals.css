@@ -1,4 +1,16 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../public/fonts/SourceSansPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
 
 :root {
   --primary: #1e1e1e;
@@ -15,9 +27,6 @@
   border-radius: 14px;
   border: 3px solid var(--primary);
 }
-
-@tailwind components;
-@tailwind utilities;
 
 .home-img {
   background-image: url("../_assets/img/bg-home.png");
