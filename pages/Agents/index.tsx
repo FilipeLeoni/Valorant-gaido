@@ -14,7 +14,9 @@ const Agents: NextPage = () => {
   const [activeRoleId, setActiveRoleIndex] = useState<number>(0);
 
   const filtered = activeRoleId
-    ? agents.filter(agent => agent.role.displayName.includes(AgentRoles[activeRoleId]))
+    ? agents.filter((agent) =>
+        agent.role.displayName.includes(AgentRoles[activeRoleId])
+      )
     : agents;
 
   const onMenuChange = (roleId: number) => setActiveRoleIndex(roleId);
@@ -32,7 +34,7 @@ const Agents: NextPage = () => {
 
   return (
     <>
-      <div className="home-img  bg-center bg-cover h-auto min-h-screen bg-fixed">
+      <div className="home-img w-full bg-center bg-cover h-auto min-h-screen bg-fixed">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -55,7 +57,6 @@ const Agents: NextPage = () => {
             />
           </div>
           <div className="justify-center flex">
-            <div className="mr-12"></div>
             <motion.div className="grid grid-cols-4 gap-10 mb-24">
               {filtered.map((agent) => (
                 <Card key={agent.uuid} data={agent} />

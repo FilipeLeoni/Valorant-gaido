@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans : ['Inter', 'sans-serif']
+        sans: ['Ubuntu'],
+        'SansPro': ['SourceSansPro']
       },
       colors: {
         pink: '#FD4556',

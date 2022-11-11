@@ -19,7 +19,7 @@ export const Titles: React.FC<Props> = ({
         <div className="w-20 h-1 xl:w-12 sm:h-[2px] bg-pink"></div>
       </div>
       <h3 className="text-2xl mt-24"> {subtitle}</h3>
-      <p className="max-w-lg mt-12 mb-20 ">{description}</p>
+      <p className="max-w-lg mt-12 text-lg mb-20 font-SansPro">{description}</p>
     </div>
   );
 };
