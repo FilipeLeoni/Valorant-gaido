@@ -102,7 +102,7 @@ const Dialog: any = () => {
                   Rifle
                 </DialogPrimitive.Description>
               </motion.div>
-              <motion.div className="absolute top-[-20px] overflow-hidden object-cover">
+              <motion.div className="absolute top-[-70px] overflow-hidden object-cover">
                 <Image src={brightLogo} alt="logo" draggable="false" />
               </motion.div>
               <div className="flex justify-center">
