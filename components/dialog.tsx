@@ -8,8 +8,15 @@ import Coin from "../_assets/img/coin.png";
 import { RiCloseFill } from "react-icons/ri";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import brightLogo from "../_assets/img/bright-logo.png";
+import { Weapon } from "../entities/weapon";
 
-const Dialog: any = () => {
+interface Props {
+  data: Weapon;
+}
+
+const Dialog: React.FC<Props> = ({
+  data: { displayName, displayIcon, shopData, weaponStats, damageStatus },
+}) => {
   let [isOpen, setIsOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
 
@@ -24,31 +31,37 @@ const Dialog: any = () => {
         <motion.div
           className="background-weapon
               bg-center
-              bg-cover w-[450px] pt-3 h-[248px] rounded-xl cursor-pointer border"
+              bg-cover w-[450px] pt-3 h-[248px] rounded-xl cursor-pointer border border-gray-light"
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
           whileHover={{ scale: 1.03 }}
         >
           <div>
             <motion.div
-              className="mt-14 justify-center flex "
+              className="mt-8 justify-center flex"
               variants={{
-                open: { rotate: 20 },
+                open: { rotate: 13 },
                 closed: { rotate: 0 },
               }}
               animate={isHover ? "open" : "closed"}
             >
-              <Image src={Vandal} width="350px" height="104px" alt="Weapon" />
+              <Image
+                src={displayIcon}
+                width="370px"
+                height="120px"
+                objectFit="scale-down"
+                alt="Weapon"
+              />
             </motion.div>
             <h2 className="ml-8 text-3xl font-bold text-pink font-SansPro">
-              VANDAL
+              {displayName}
             </h2>
           </div>
           <div className="ml-8 mb-3 flex gap-2 mt-[-6px] text-[23px] text-white font-SansPro">
             <div className="mt-[2px]">
               <Image src={Coin} width="17px" height="17px" alt="Coin" />
             </div>
-            <p>2.900</p>
+            <p>{shopData.cost}</p>
           </div>
         </motion.div>
       </DialogPrimitive.Trigger>
@@ -96,7 +109,7 @@ const Dialog: any = () => {
             >
               <motion.div className="flex flex-col items-center">
                 <DialogPrimitive.Title className="text-3xl mt-2 font-semibold text-gray-dark">
-                  Vandal
+                  {displayName}
                 </DialogPrimitive.Title>
                 <DialogPrimitive.Description className="text-lg font-medium text-gray-dark">
                   Rifle
@@ -107,14 +120,21 @@ const Dialog: any = () => {
               </motion.div>
               <div className="flex justify-center">
                 <motion.div
-                  className="mt-16 drop-shadow-md w-10/12 mr-2"
+                  className="mt-16 drop-shadow-md w-10/12 mr-2 "
                   style={{ x, y, rotateX, rotateY, z: 1000000 }}
                   drag
                   dragElastic={0.12}
                   dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
                   whileTap={{ cursor: "grabbing" }}
                 >
-                  <Image src={Vandal} draggable="false" alt="Weapon" />
+                  <Image
+                    src={displayIcon}
+                    width="600px"
+                    height="180px"
+                    objectFit="scale-down"
+                    draggable="false"
+                    alt="Weapon"
+                  />
                 </motion.div>
               </div>
 

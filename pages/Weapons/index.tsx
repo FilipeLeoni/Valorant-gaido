@@ -1,14 +1,28 @@
 import Dialog from "../../components/dialog";
+import Image from "next/image";
 import { NextPage } from "next";
 import { Description } from "../../components/description";
 import { Title } from "../../components/pageTitle";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Menu } from "../../components/menu";
+import { Weapon } from "../../entities/weapon";
 import { motion } from "framer-motion";
+import { getWeapons } from "../api/valorant-service";
 
 const Weapons: NextPage = () => {
+  const [weapons, setWeapons] = useState<Weapon[]>([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const weapons = await getWeapons();
+        setWeapons(weapons);
+      } catch (error) {
+        console.log("Error trying to search for weapons");
+      }
+    })();
+  }, []);
   return (
-    <div className="h-screen w-full bg-gray-darker">
+    <div className="h-auto w-full bg-gray-darker">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -23,8 +37,12 @@ const Weapons: NextPage = () => {
             </Description>
           </span>
           <div></div>
-          <div className="mt-12">
-            <Dialog />
+          <div className="justify-center flex">
+            <motion.div className="grid grid-cols-3 gap-10 mb-24">
+              {weapons.map((weapon) => (
+                <Dialog key={weapon.uuid} data={weapon} />
+              ))}
+            </motion.div>
           </div>
         </div>
       </motion.div>
