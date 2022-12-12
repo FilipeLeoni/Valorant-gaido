@@ -34,7 +34,7 @@ export const WeaponsCard: React.FC<Props> = ({
             <Image src={Coin} alt="" width="20px" height="20px" />
           </span>
           <p className="text-xl font-bold mt-[-7px] ml-1 text-gray-dark">
-            2900
+            {shopData.cost}
           </p>
         </div>
       </div>
