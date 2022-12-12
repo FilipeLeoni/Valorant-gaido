@@ -1,4 +1,3 @@
-import Dialog from "../../components/dialog";
 import Image from "next/image";
 import { NextPage } from "next";
 import { Description } from "../../components/description";
@@ -8,7 +7,7 @@ import { Menu } from "../../components/menu";
 import { Weapon } from "../../entities/weapon";
 import { motion } from "framer-motion";
 import { getWeapons } from "../api/valorant-service";
-
+import { WeaponsCard } from "../../components/weaponsCard";
 const Weapons: NextPage = () => {
   const [weapons, setWeapons] = useState<Weapon[]>([]);
   useEffect(() => {
@@ -36,14 +35,13 @@ const Weapons: NextPage = () => {
               and their utility.
             </Description>
           </span>
-          <div></div>
-          <div className="justify-center flex">
-            <motion.div className="grid grid-cols-3 gap-10 mb-24">
-              {weapons.map((weapon) => (
-                <Dialog key={weapon.uuid} data={weapon} />
-              ))}
-            </motion.div>
-          </div>
+        </div>
+        <div className="justify-center flex mt-20">
+          <motion.div className="grid grid-cols-3 gap-10 mb-24">
+            {weapons.map((weapon) => (
+              <WeaponsCard key={weapon.uuid} data={weapon} />
+            ))}
+          </motion.div>
         </div>
       </motion.div>
     </div>
