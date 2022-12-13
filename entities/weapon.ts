@@ -10,13 +10,13 @@ export interface WeaponStats {
 }
 export interface ShopData {
     category: string
-    cost: number
+    cost: number 
 }
 export interface Weapon {
     uuid: string
     displayName: string
     displayIcon: string
-    shopData: ShopData
+    shopData?: ShopData
     weaponStats: WeaponStats
     damageStatus: DamageStatus[]
 }

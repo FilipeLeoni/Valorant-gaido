@@ -10,7 +10,7 @@ export const WeaponsCard: React.FC<Props> = ({
   data: { displayName, shopData, displayIcon },
 }) => {
   return (
-    <div className="w-96 h-52 bg-white flex flex-col cursor-pointer">
+    <div className="w-96 h-52 bg-gray-lighter flex flex-col cursor-pointer">
       <div className="flex flex-col items-center overflow-hidden object-contain">
         <motion.div
           className="w-72 h-60 mt-10 ml-5 object-contain"
@@ -34,7 +34,7 @@ export const WeaponsCard: React.FC<Props> = ({
             <Image src={Coin} alt="" width="20px" height="20px" />
           </span>
           <p className="text-xl font-bold mt-[-7px] ml-1 text-gray-dark">
-            {shopData.cost}
+            {shopData?.cost}
           </p>
         </div>
       </div>
