@@ -1,5 +1,5 @@
 import Image from "next/image";
-import coin from "../_assets/img/Coin.png";
+import Coin from "../_assets/img/coin.png";
 import { motion, useAnimation } from "framer-motion";
 import { Weapon } from "../entities/weapon";
 interface Props {
@@ -31,7 +31,7 @@ export const WeaponsCard: React.FC<Props> = ({
         <h2 className="text-pink font-SansPro text-[40px]">{displayName}</h2>
         <div className="flex items-center mt-[-8px] 6">
           <span className="w-5">
-            <Image src={coin} alt="" width="20px" height="20px" />
+            <Image src={Coin} alt="" width="20px" height="20px" />
           </span>
           <p className="text-xl font-bold mt-[-7px] ml-1 text-gray-dark">
             {shopData?.cost}
