@@ -27,14 +27,12 @@ const Weapons: NextPage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
       >
-        <div className="flex items-center justify-center flex-col pt-28 text-gray-dark">
+        <div className="flex items-center justify-center flex-col pt-28">
           <Title>WEAPONS</Title>
-          <span className="text-gray-light">
-            <Description>
-              Weapons are used by agents to damage and kill/destroy enemy agents
-              and their utility.
-            </Description>
-          </span>
+          <Description>
+            Weapons are used by agents to damage and kill/destroy enemy agents
+            and their utility.
+          </Description>
         </div>
         <div className="justify-center flex mt-20">
           <motion.div className="grid grid-cols-3 gap-10 mb-24">
