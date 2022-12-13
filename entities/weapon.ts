@@ -17,6 +17,6 @@ export interface Weapon {
     displayName: string
     displayIcon: string
     shopData?: ShopData
-    weaponStats: WeaponStats
+    weaponStats?: WeaponStats
     damageStatus: DamageStatus[]
 }

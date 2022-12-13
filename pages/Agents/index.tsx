@@ -44,12 +44,10 @@ const Agents: NextPage = () => {
           <div className="pt-28 justify-center flex mb-16 text-center">
             <div className="text-white">
               <Title>AGENTS</Title>
-              <span className="text-gray">
-                <Description>
-                  Agents with adaptive, fast, and lethal abilities that create
-                  opportunities for you to show off your shooting mechanics.
-                </Description>
-              </span>
+              <Description>
+                Agents with adaptive, fast, and lethal abilities that create
+                opportunities for you to show off your shooting mechanics.
+              </Description>
             </div>
           </div>
           <div className="justify-center flex mb-24">
