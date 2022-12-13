@@ -35,3 +35,11 @@
 .weapons-bg {
   background-image: url("../_assets/img/bg-weapons.png");
 }
+
+.background-weapon {
+  background-image: url("../_assets/img/background-weapon.png");
+}
+
+.weapons-card {
+  background-image: url("../_assets/img/bg-weaponcard.png");
+}

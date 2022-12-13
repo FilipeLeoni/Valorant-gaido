@@ -8,6 +8,7 @@ import { getAgents } from "../api/valorant-service";
 import { Title } from "../../components/pageTitle";
 import { Description } from "../../components/description";
 import { AgentRoles } from "../../utils/constants";
+import Link from "next/link";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
