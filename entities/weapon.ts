@@ -3,10 +3,16 @@ export interface DamageStatus {
     bodyDamage: number
     legDamage: number
 }
+export interface DamageRanges {
+    headDamage: number
+    bodyDamage: number
+    legDamage: number
+}
 export interface WeaponStats {
     fireRate: number
     magazineSize: number
     reloadTimeSeconds: number
+    damageRanges: DamageRanges[]
 }
 export interface ShopData {
     category: string
@@ -19,4 +25,5 @@ export interface Weapon {
     shopData?: ShopData
     weaponStats?: WeaponStats
     damageStatus: DamageStatus[]
+
 }

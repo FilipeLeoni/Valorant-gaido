@@ -17,29 +17,8 @@ export const Header: NextPage = () => {
     setNav(!nav);
   };
 
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <div
-      className={classnames(
-        "fixed",
-        "left-0",
-        "top-0",
-        "w-full",
-        "z-20",
-        "ease-in",
-        "duration-300",
-        {
-          "bg-gray-darker": scrollY >= 90,
-          "bg-transparent": scrollY < 90,
-        }
-      )}
-    >
+    <div className="fixed left-0 top-0 w-full z-20 ease-in duration-300 bg-gray-darker/90">
       <div className="flex md:justify-between justify-evenly items-center p-1">
         <div className="w-[123px] h-[41px] lg:w-auto justify-center flex ">
           <Link href="/">
