@@ -62,7 +62,7 @@ const Agents: NextPage = () => {
             />
           </div>
           <div className="justify-center flex">
-            <motion.div className="grid grid-cols-4 gap-10 mb-24">
+            <motion.div className="grid grid-cols-4 lg:grid-cols-2 gap-10 mb-24">
               {filtered.map((agent) => (
                 <Card key={agent.uuid} data={agent} />
               ))}
