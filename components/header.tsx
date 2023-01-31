@@ -11,7 +11,6 @@ import classnames from "clsx";
 
 export const Header: NextPage = () => {
   const [nav, setNav] = useState(false);
-  const [scrollY, setScrollY] = useState<number>(0);
 
   const handleNav: any = () => {
     setNav(!nav);
@@ -50,9 +49,23 @@ export const Header: NextPage = () => {
             </Link>
           </li>
           <li className="py-4">
-            <Link href="/">
+            <Link href="/Maps">
               <a className="p-3 m-2 hover:ease-in-out hover:text-pink cursor-pointer hover:border-b-2 border-pink hover:bg-gray/10 rounded">
                 MAPS
+              </a>
+            </Link>
+          </li>
+          <li className="py-4">
+            <Link href="/About">
+              <a className="p-3 m-2 hover:ease-in-out hover:text-pink cursor-pointer hover:border-b-2 border-pink hover:bg-gray/10 rounded">
+                ABOUT
+              </a>
+            </Link>
+          </li>
+          <li className="py-4">
+            <Link href="/Ranks">
+              <a className="p-3 m-2 hover:ease-in-out hover:text-pink cursor-pointer hover:border-b-2 border-pink hover:bg-gray/10 rounded">
+                RANKS
               </a>
             </Link>
           </li>
