@@ -5,5 +5,5 @@ type DescriptionProps = {
 };
 
 export const Description = ({ children }: DescriptionProps) => {
-  return <p className="text-gray mt-4 font-SansPro">{children}</p>;
+  return <p className="text-gray mt-4 font-SansPro text-center">{children}</p>;
 };

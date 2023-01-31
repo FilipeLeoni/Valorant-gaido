@@ -1,7 +1,7 @@
-<svg width="772" height="1059" viewBox="0 0 772 1059" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="229" cy="529.5" rx="543" ry="529.5" fill="url(#paint0_radial_403_82)"/>
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="300" r="300" fill="url(#paint0_radial_448_286)"/>
 <defs>
-<radialGradient id="paint0_radial_403_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(229 529.5) rotate(90) scale(529.5 543)">
+<radialGradient id="paint0_radial_448_286" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 300) rotate(90) scale(300)">
 <stop stop-color="#0065E8" stop-opacity="0.28"/>
 <stop offset="1" stop-color="#005ACD" stop-opacity="0"/>
 </radialGradient>

@@ -19,7 +19,6 @@ import {
 import Link from "next/link";
 
 const WeaponsDetails = ({ Weapon }: any) => {
-  const [position, setPosition] = useState(true);
   const ReloadTime = `Reload Time: ${Weapon.data.weaponStats.reloadTimeSeconds} Sec`;
   const FireRate = `Fire Rate: ${Weapon.data.weaponStats.fireRate}`;
   const MagazineSize = `Magazine Size: ${Weapon.data.weaponStats.magazineSize} Bullets`;
@@ -95,8 +94,8 @@ const WeaponsDetails = ({ Weapon }: any) => {
         <div className="absolute right-10 top-0">
           <Image src={Red} alt="2" />
         </div>
-        <div className="absolute top-72">
-          <Image src={Blue} alt="2" />
+        <div className="absolute top-72 ml-[-400px]">
+          <Image src={Blue} alt="2" width={1000} height={1000} />
         </div>
       </motion.div>
 
@@ -189,8 +188,8 @@ const WeaponsDetails = ({ Weapon }: any) => {
             </motion.div>
           </motion.div>
         </div>
-        <div className="absolute top-2 left-0 z-0">
-          <Image src={Blue} alt="2" />
+        <div className="absolute top-2 left-0 z-0 ml-[-400px]">
+          <Image src={Blue} alt="2" width={1000} height={1000} />
         </div>
       </section>
     </motion.div>

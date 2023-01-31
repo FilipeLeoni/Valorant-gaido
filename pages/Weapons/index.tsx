@@ -39,7 +39,7 @@ const Weapons: NextPage = () => {
           </Description>
         </div>
         <div className="justify-center flex mt-20">
-          <motion.div className="grid grid-cols-3 gap-10 mb-24">
+          <motion.div className="grid grid-cols-3 lg:grid-cols-1 gap-10 mb-24 lg:scale-95">
             {weapons.map((weapon) => (
               <WeaponsCard key={weapon.uuid} data={weapon} />
             ))}
