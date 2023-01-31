@@ -8,6 +8,7 @@ import { Weapon } from "../../entities/weapon";
 import { motion } from "framer-motion";
 import { getWeapons } from "../api/valorant-service";
 import { WeaponsCard } from "../../components/weaponsCard";
+import Head from "next/head";
 const Weapons: NextPage = () => {
   const [weapons, setWeapons] = useState<Weapon[]>([]);
   useEffect(() => {
@@ -22,6 +23,9 @@ const Weapons: NextPage = () => {
   }, []);
   return (
     <div className="h-auto w-full bg-gray-darker">
+      <Head>
+        <title>Valorant Gaido Weapons</title>
+      </Head>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}

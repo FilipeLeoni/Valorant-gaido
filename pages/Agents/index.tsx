@@ -9,6 +9,7 @@ import { Title } from "../../components/pageTitle";
 import { Description } from "../../components/description";
 import { AgentRoles } from "../../utils/constants";
 import Link from "next/link";
+import Head from "next/head";
 
 const Agents: NextPage = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
@@ -35,6 +36,9 @@ const Agents: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Valorant Gaido Agents</title>
+      </Head>
       <div className="home-img w-full bg-center bg-cover h-auto min-h-screen bg-fixed">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

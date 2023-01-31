@@ -17,11 +17,15 @@ import Fireball from "../../_assets/img/fireball.png";
 import Kunai from "../../_assets/img/kunai.png";
 import allAgents from "../../_assets/img/allAgents.png";
 import map from "../../_assets/img/map.png";
+import Head from "next/head";
 
 const HomePage: NextPage = () => {
   return (
     <>
       <section className="home-img bg-center bg-cover h-screen">
+        <Head>
+          <title>Valorant Gaido</title>
+        </Head>
         <div className="grid mx-auto pt-12 h-screen md:h-[90%] grid-cols-12 md:flex">
           <motion.div
             className="pl-32 md:p-0 md:mx-8 text-[#FFFFFF] mr-auto col-span-7 self-center md:items-center lg:items-start md:text-center"
@@ -90,7 +94,7 @@ const HomePage: NextPage = () => {
             </div>
           </motion.div>
           <motion.div
-            className="col-span-5 max-w-[440px] md:hidden self-center"
+            className="col-span-5 max-w-[440px] md:hidden self-center absolute right-36 "
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
@@ -161,7 +165,7 @@ const HomePage: NextPage = () => {
 
       <section className="bg-gray">
         <div className="flex h-screen xl:flex-col xl:h-auto">
-          <div className="pt-32 pl-32 text-gray-darker xl:flex xl:flex-col xl:justify-center xl:pl-0 xl:items-center xl:text-center xl:mx-8">
+          <div className="pt-32 pl-32 text-gray-darker xl:flex xl:flex-col xl:justify-center xl:pl-0 xl:items-center xl:text-center xl:mx-8 relative">
             <Titles
               title="MAPS"
               subtitle="HIGH QUAITY DESIGN MAPS"
@@ -169,7 +173,7 @@ const HomePage: NextPage = () => {
             />
             <Button link="/" title="CHECK THE MAPS" />
           </div>
-          <div className="flex self-end  xl:justify-center">
+          <div className="flex self-end  xl:justify-center xl:relative absolute right-0 w-[1000px]">
             <Image src={map} alt="Map" />
           </div>
         </div>
