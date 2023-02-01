@@ -1,5 +1,5 @@
 import { Agent } from "../../entities/agent"
-import { Weapon } from "../../entities/weapon"
+import { Map, Weapon } from "../../entities/weapon"
 
 export interface AgentResponse {
     status: string
@@ -13,4 +13,9 @@ export interface GetAgentsParams {
 export interface WeaponResponse {
     status: string
     data: Weapon[]
+}
+
+export interface MapResponse {
+    status: string
+    data: Map[]
 }
