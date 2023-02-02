@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { Title } from "../../components/pageTitle";
-import { Map } from "../../entities/weapon";
+import { Map } from "../../entities/map";
 import { useState, useEffect } from "react";
 import { getMaps } from "../api/valorant-service";
 import { MapCard } from "../../components/mapCard";
