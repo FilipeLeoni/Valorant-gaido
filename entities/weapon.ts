@@ -27,9 +27,3 @@ export interface Weapon {
     damageStatus: DamageStatus[]
 
 }
-
-export interface Map {
-    uuid: string
-    displayName: string
-    displayIcon: string
-}

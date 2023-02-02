@@ -1,10 +1,7 @@
 import Image from "next/image";
-import Agents from "../../_assets/img/weapon-banner.png";
-import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { WeaponsSkin } from "../../components/weaponSkin";
-import classnames from "clsx";
 import Blue from "../../_assets/img/Blue-rounded.svg";
 import Red from "../../_assets/img/red-rounded.svg";
 import Body from "../../_assets/img/body.svg";
@@ -17,6 +14,7 @@ import {
   GiReticule,
 } from "react-icons/gi";
 import Link from "next/link";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 const WeaponsDetails = ({ Weapon }: any) => {
   const ReloadTime = `Reload Time: ${Weapon.data.weaponStats.reloadTimeSeconds} Sec`;
@@ -198,15 +196,27 @@ const WeaponsDetails = ({ Weapon }: any) => {
 
 export default WeaponsDetails;
 
-export async function getServerSideProps(context: any) {
-  const response = await fetch(
-    `https://valorant-api.com/v1/weapons/${context.query.weaponsId}`
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch("https://valorant-api.com/v1/weapons/");
+  const weapons: any = await res.json();
+  const paths = weapons.data.map((weapon: any) => {
+    return {
+      params: { weaponsId: weapon.uuid.toString() },
+    };
+  });
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const res = await fetch(
+    `https://valorant-api.com/v1/weapons/${params.weaponsId}`
   );
-  const Weapon = await response.json();
+  const Weapon = await res.json();
 
   return {
     props: {
       Weapon,
     },
   };
-}
+};
