@@ -52,7 +52,7 @@ const AgentDetails = ({ agent }: any) => {
               Tap or click to see the skill details <MdAdsClick />{" "}
             </p>
             <motion.div className="text-white gap-2 flex flex-col pb-20 lg:justify-center lg:align-middle lg:items-center">
-              {agent.data.abilities.map((ability: any, i: any) => (
+              {agent.data?.abilities.map((ability: any, i: any) => (
                 <PowerCard data={ability} key={i} />
               ))}
             </motion.div>
@@ -72,8 +72,11 @@ const AgentDetails = ({ agent }: any) => {
 export default AgentDetails;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("https://valorant-api.com/v1/agents/");
+  const res = await fetch(
+    "https://valorant-api.com/v1/agents?isPlayableCharacter=true"
+  );
   const agents: any = await res.json();
+  console.log(agents);
   const paths = agents.data.map((agent: any) => {
     return {
       params: { agentId: agent.uuid },

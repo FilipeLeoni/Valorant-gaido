@@ -17,10 +17,10 @@ import Link from "next/link";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 const WeaponsDetails = ({ Weapon }: any) => {
-  const ReloadTime = `Reload Time: ${Weapon.data.weaponStats.reloadTimeSeconds} Sec`;
-  const FireRate = `Fire Rate: ${Weapon.data.weaponStats.fireRate}`;
-  const MagazineSize = `Magazine Size: ${Weapon.data.weaponStats.magazineSize} Bullets`;
-  const AimZoom = `Aim Zoom: ${Weapon.data.weaponStats.adsStats?.zoomMultiplier}`;
+  const ReloadTime = `Reload Time: ${Weapon.data.weaponStats?.reloadTimeSeconds} Sec`;
+  const FireRate = `Fire Rate: ${Weapon.data.weaponStats?.fireRate}`;
+  const MagazineSize = `Magazine Size: ${Weapon.data.weaponStats?.magazineSize} Bullets`;
+  const AimZoom = `Aim Zoom: ${Weapon.data.weaponStats?.adsStats?.zoomMultiplier}`;
   const [width, setWidth] = useState(0);
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -110,17 +110,17 @@ const WeaponsDetails = ({ Weapon }: any) => {
               <div className="md:text-base ">
                 <div className="absolute top-3 border-t-2 w-44 md:w-24">
                   <p>
-                    Head: {Weapon.data.weaponStats.damageRanges[0].headDamage}
+                    Head: {Weapon.data.weaponStats?.damageRanges[0].headDamage}
                   </p>
                 </div>
                 <div className="absolute top-36 ml-4 border-t-2 w-44 md:w-24">
                   <p>
-                    Chest: {Weapon.data.weaponStats.damageRanges[0].bodyDamage}
+                    Chest: {Weapon.data.weaponStats?.damageRanges[0].bodyDamage}
                   </p>
                 </div>
                 <div className="absolute bottom-40 ml-4 border-t-2 w-44 md:w-24">
                   <p>
-                    Legs: {Weapon.data.weaponStats.damageRanges[0].legDamage}
+                    Legs: {Weapon.data.weaponStats?.damageRanges[0].legDamage}
                   </p>
                 </div>
               </div>
