@@ -9,8 +9,19 @@ import { motion } from "framer-motion";
 import { getWeapons } from "../api/valorant-service";
 import { WeaponsCard } from "../../components/weaponsCard";
 import Head from "next/head";
+import { WeaponsType } from "../../utils/constants";
+
 const Weapons: NextPage = () => {
   const [weapons, setWeapons] = useState<Weapon[]>([]);
+  const [activeTypeId, setActiveTypeIndex] = useState<number>(0);
+
+  const filtered = activeTypeId
+    ? weapons.filter((weapon) =>
+        weapon.shopData?.category.includes(WeaponsType[activeTypeId])
+      )
+    : weapons;
+
+  const onMenuChange = (typeId: number) => setActiveTypeIndex(typeId);
   useEffect(() => {
     (async () => {
       try {
@@ -38,9 +49,16 @@ const Weapons: NextPage = () => {
             and their utility.
           </Description>
         </div>
-        <div className="justify-center flex mt-20">
+        <div className="justify-center flex mt-12">
+          <Menu
+            onMenuChange={onMenuChange}
+            selectedItemId={activeTypeId}
+            items={WeaponsType}
+          />
+        </div>
+        <div className="justify-center flex mt-24">
           <motion.div className="grid grid-cols-3 lg:grid-cols-1 gap-10 mb-24 lg:scale-95">
-            {weapons.map((weapon) => (
+            {filtered.map((weapon) => (
               <WeaponsCard key={weapon.uuid} data={weapon} />
             ))}
           </motion.div>

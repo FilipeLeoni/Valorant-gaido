@@ -5,3 +5,13 @@ export const AgentRoles = [
   'Duelist',
   'Controller',
 ]
+
+export const WeaponsType = [
+  'All Weapons',
+  'Rifles',
+  'Heavy Weapons',
+  'Shotguns',
+  'Pistols',
+  'Sniper',
+  'SMGs',
+]

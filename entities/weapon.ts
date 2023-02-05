@@ -18,6 +18,13 @@ export interface ShopData {
     category: string
     cost: number 
 }
+
+export interface Skins {
+    uuid: string
+    displayName: string
+    displayIcon: string
+}
+
 export interface Weapon {
     uuid: string
     displayName: string
@@ -25,5 +32,5 @@ export interface Weapon {
     shopData?: ShopData
     weaponStats?: WeaponStats
     damageStatus: DamageStatus[]
-
+    skin?: Skins[]
 }

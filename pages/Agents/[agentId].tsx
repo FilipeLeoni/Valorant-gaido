@@ -5,17 +5,17 @@ import Blue from "../../_assets/img/Blue-rounded.svg";
 import Red from "../../_assets/img/red-rounded.svg";
 import { motion } from "framer-motion";
 import { MdAdsClick } from "react-icons/md";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-const AgentDetails = ({ agent }: any) => {
+const AgentDetails: NextPage = ({ agent }: any) => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Valorant Agent {agent.data.displayName}</title>
       </Head>
 
       <motion.section className="min-h-screen bg-gray-darker relative overflow-hidden">
-        <div className="flex w-full justify-center items-start gap-36 z-10 lg:flex-col lg:align-middle lg:items-center relative ">
+        <div className="flex w-full justify-center items-start gap-36 z-10 lg:flex-col lg:align-middle lg:items-center relative">
           <div className="w-80 mt-8 md:w-44">
             <Image
               src={agent.data.fullPortraitV2}
@@ -27,7 +27,12 @@ const AgentDetails = ({ agent }: any) => {
               className="object-scale-down"
             />
           </div>
-          <div className="flex flex-col items-start relative mt-32 lg:mt-[-50px] lg:justify-center lg:items-center lg:align-middle lg:text-center">
+          <motion.div
+            className="flex flex-col items-start relative mt-32 lg:mt-[-50px] lg:justify-center lg:items-center lg:align-middle lg:text-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
             <Image
               src={agent.data.role.displayIcon}
               alt="dd"
@@ -52,11 +57,11 @@ const AgentDetails = ({ agent }: any) => {
               Tap or click to see the skill details <MdAdsClick />{" "}
             </p>
             <motion.div className="text-white gap-2 flex flex-col pb-20 lg:justify-center lg:align-middle lg:items-center">
-              {agent.data?.abilities.map((ability: any, i: any) => (
+              {agent.data?.abilities.map((ability: any, i: number) => (
                 <PowerCard data={ability} key={i} />
               ))}
             </motion.div>
-          </div>
+          </motion.div>
         </div>
         <div className="absolute right-0 top-0 z-0">
           <Image src={Red} alt="2" />
@@ -76,7 +81,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     "https://valorant-api.com/v1/agents?isPlayableCharacter=true"
   );
   const agents: any = await res.json();
-  console.log(agents);
   const paths = agents.data.map((agent: any) => {
     return {
       params: { agentId: agent.uuid },
@@ -98,15 +102,3 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     },
   };
 };
-
-// export async function getServerSideProps(context: any) {
-//   const response = await fetch(
-//     `https://valorant-api.com/v1/agents/${context.query.agentId}`
-//   );
-//   const Agent = await response.json();
-//   return {
-//     props: {
-//       Agent,
-//     },
-//   };
-// }

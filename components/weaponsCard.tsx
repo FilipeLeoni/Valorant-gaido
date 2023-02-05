@@ -13,7 +13,12 @@ export const WeaponsCard: React.FC<Props> = ({
   return (
     <>
       <Link href={`/Weapons/${uuid}`}>
-        <div className="w-96 h-52 bg-gray-lighter flex flex-col cursor-pointer">
+        <motion.div
+          className="w-96 h-52 bg-gray-lighter flex flex-col cursor-pointer rounded"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="flex flex-col items-center overflow-hidden object-contain">
             <motion.div
               className="w-72 h-60 mt-10 ml-5 object-contain"
@@ -43,7 +48,7 @@ export const WeaponsCard: React.FC<Props> = ({
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Link>
     </>
   );

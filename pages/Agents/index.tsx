@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu } from "../../components/menu";
 import { Card } from "../../components/card";
 import { Agent } from "../../entities/agent";
@@ -8,7 +8,6 @@ import { getAgents } from "../api/valorant-service";
 import { Title } from "../../components/pageTitle";
 import { Description } from "../../components/description";
 import { AgentRoles } from "../../utils/constants";
-import Link from "next/link";
 import Head from "next/head";
 
 const Agents: NextPage = () => {
@@ -37,7 +36,7 @@ const Agents: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Valorant Gaido Agents</title>
+        <title>Agents</title>
       </Head>
       <div className="home-img w-full bg-center bg-cover h-auto min-h-screen bg-fixed">
         <motion.div
@@ -62,7 +61,7 @@ const Agents: NextPage = () => {
             />
           </div>
           <div className="justify-center flex">
-            <motion.div className="grid grid-cols-4 lg:grid-cols-2 gap-10 mb-24">
+            <motion.div className="grid grid-cols-4 lg:grid-cols-1 gap-10 mb-24">
               {filtered.map((agent) => (
                 <Card key={agent.uuid} data={agent} />
               ))}

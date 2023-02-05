@@ -13,3 +13,9 @@ export interface Agent {
     fullPortraitV2: string
     role: AgentRole
 }
+
+export interface AgentAbilities {
+    displayName: string
+    description: string
+    displayIcon: string
+}

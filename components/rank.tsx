@@ -1,12 +1,17 @@
 import Image from "next/image";
+import { Tiers } from "../entities/rank";
 
-const RankComponent = ({ data: { tierName, largeIcon } }: any) => {
+interface Props {
+  data: Tiers;
+}
+
+const RankComponent: React.FC<Props> = ({ data: { tierName, largeIcon } }) => {
   return (
-    <div className="">
+    <div>
       <div>
         <Image
           src={largeIcon}
-          alt="d"
+          alt={tierName}
           width="60"
           height="60"
           layout="fixed"

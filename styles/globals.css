@@ -43,3 +43,11 @@
 .weapons-card {
   background-image: url("../_assets/img/bg-weaponcard.png");
 }
+
+.ranks-bg {
+  background-image: url("../_assets/img/Ranks-bg.png");
+}
+
+.about-bg {
+  background-image: url("../_assets/img/About-bg.png");
+}
