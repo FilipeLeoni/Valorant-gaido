@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               information about weapons, agents, maps and their in-game stats,
               learn more about the project by clicking the buttons below.
             </h3>
-            <Button link="/" title="ABOUT PROJECT" />
+            <Button link="/About" title="ABOUT PROJECT" />
             <div className="flex items-center mt-14 md:justify-center">
               <div className="w-36 h-1 md:w-12 sm:h-[2px] bg-pink"></div>
               <div className="text-pink flex text-2xl">
