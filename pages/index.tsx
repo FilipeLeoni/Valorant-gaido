@@ -171,7 +171,7 @@ const Home: NextPage = () => {
               subtitle="HIGH QUAITY DESIGN MAPS"
               description="Each map serves as a stage to showcase your creativity. Maps are tailored for team strategies, spectacular feats and thrilling moments. Do the actions that everyone will try to imitate in the future!"
             />
-            <Button link="/" title="CHECK THE MAPS" />
+            <Button link="/Maps" title="CHECK THE MAPS" />
           </div>
           <div className="flex self-end  xl:justify-center xl:relative absolute right-0 w-[1000px]">
             <Image src={map} alt="Map" />
