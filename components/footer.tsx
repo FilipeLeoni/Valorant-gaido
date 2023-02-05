@@ -9,7 +9,7 @@ import {
   RiGithubFill,
 } from "react-icons/ri";
 
-export const Footer: NextPage = () => {
+export const Footer = () => {
   return (
     <div className="bg-blue w-100% h-64 flex flex-col justify-center items-center">
       <div>

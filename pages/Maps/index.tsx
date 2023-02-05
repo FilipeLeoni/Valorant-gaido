@@ -19,9 +19,8 @@ const Maps: NextPage = () => {
       }
     })();
   }, []);
-  console.log(maps);
   return (
-    <div className="min-h-screen bg-gray-darker flex justify-center items-center flex-col gap-20 pt-24">
+    <div className="min-h-screen bg-gray-darker w-full flex justify-center items-center flex-col gap-20 pt-24">
       <motion.div
         className="flex flex-col text-center"
         initial={{ opacity: 0, scale: 0.5 }}
@@ -35,7 +34,7 @@ const Maps: NextPage = () => {
           moves, and electrifying moments.
         </Description>
       </motion.div>
-      <div className="grid grid-cols-2 gap-y-20 gap-x-20 pb-44">
+      <div className="grid grid-cols-2 gap-y-20 gap-x-20 pb-44 lg:flex lg:flex-col">
         {maps.map((map) => (
           <MapCard key={map.uuid} data={map} />
         ))}

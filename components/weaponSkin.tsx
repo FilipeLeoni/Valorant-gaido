@@ -4,8 +4,15 @@ import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import clsx from "clsx";
+import { Skins } from "../entities/weapon";
 
-export const WeaponsSkin = ({ data: { displayIcon, displayName } }: any) => {
+interface Props {
+  data: Skins;
+}
+
+export const WeaponsSkin: React.FC<Props> = ({
+  data: { displayIcon, displayName },
+}) => {
   return (
     <div
       className={clsx(

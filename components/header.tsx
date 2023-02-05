@@ -1,15 +1,13 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { RiDownloadFill } from "react-icons/ri";
-
 import valorantSmLogo from "../_assets/img/valorant-logo.svg";
 import { motion } from "framer-motion";
-import classnames from "clsx";
 
-export const Header: NextPage = () => {
+export const Header = () => {
   const [nav, setNav] = useState(false);
 
   const handleNav: any = () => {
@@ -56,16 +54,16 @@ export const Header: NextPage = () => {
             </Link>
           </li>
           <li className="py-4">
-            <Link href="/About">
+            <Link href="/Ranks">
               <a className="p-3 m-2 hover:ease-in-out hover:text-pink cursor-pointer hover:border-b-2 border-pink hover:bg-gray/10 rounded">
-                ABOUT
+                RANKS
               </a>
             </Link>
           </li>
           <li className="py-4">
-            <Link href="/Ranks">
+            <Link href="/About">
               <a className="p-3 m-2 hover:ease-in-out hover:text-pink cursor-pointer hover:border-b-2 border-pink hover:bg-gray/10 rounded">
-                RANKS
+                ABOUT
               </a>
             </Link>
           </li>
@@ -96,7 +94,7 @@ export const Header: NextPage = () => {
               : "hidden absolute top-0 left-[-100%] right-0 bottom-0 md:flex justify-center items-center w-full h-screen bg-gray-darker text-center text-white ease-in duration-300"
           }
         >
-          <ul className="mb-80" onClick={() => setNav(!nav)}>
+          <ul className="mb-40" onClick={() => setNav(!nav)}>
             <li className="p-4 text-2xl hover:text-pink">
               <Link href="/">HOME</Link>
             </li>
@@ -107,7 +105,13 @@ export const Header: NextPage = () => {
               <Link href="/Weapons">WEAPONS</Link>
             </li>
             <li className="p-4 text-2xl hover:text-pink">
-              <Link href="/">MAPS</Link>
+              <Link href="/Maps">MAPS</Link>
+            </li>
+            <li className="p-4 text-2xl hover:text-pink">
+              <Link href="/Ranks">RANKS</Link>
+            </li>
+            <li className="p-4 text-2xl hover:text-pink">
+              <Link href="/About">ABOUT</Link>
             </li>
             <button className="py-2 px-8 mt-3 text-white bg-pink rounded-lg text-sm font-medium">
               DOWNLOAD

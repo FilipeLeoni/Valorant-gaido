@@ -3,9 +3,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import Passive from "../_assets/img/passiveIcon.png";
-const PowerCard = ({
+import { AgentAbilities } from "../entities/agent";
+
+interface Props {
+  data: AgentAbilities;
+}
+
+const PowerCard: React.FC<Props> = ({
   data: { displayIcon, displayName, description },
-}: any) => {
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <motion.div
@@ -35,7 +41,17 @@ const PowerCard = ({
           className="text-white child lg:text-center lg:align-middle lg:justify-center lg:items-center"
           layout="position"
         >
-          <p className="text-2xl mb-1 ">{displayName}</p>
+          <motion.p
+            className="text-2xl mb-1 "
+            animate={{ x: [-20, 0], opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.6,
+            }}
+            initial={{ opacity: 0 }}
+          >
+            {displayName}
+          </motion.p>
         </motion.div>
         {isOpen && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

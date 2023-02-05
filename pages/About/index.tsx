@@ -1,7 +1,9 @@
 import Head from "next/head";
 import { AboutCard } from "../../components/aboutCard";
+import { motion } from "framer-motion";
+import { NextPage } from "next";
 
-const About = () => {
+const About: NextPage = () => {
   const myArray = [
     {
       number: 1,
@@ -49,16 +51,25 @@ const About = () => {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="h-screen about-card bg-center bg-cover flex">
-        <div className="text-white flex flex-col pl-44 justify-center">
-          <h1 className="font-bold text-4xl mb-8 ">ABOUT PROJECT</h1>
-          <p className="w-[600px] text-xl">
+      <div className="h-screen about-bg bg-center bg-cover flex lg:justify-center">
+        <motion.div
+          className="text-white flex flex-col pl-44 justify-center lg:text-center lg:pl-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, x: [-100, 0] }}
+          transition={{ duration: 0.7 }}
+        >
+          <h1 className="font-bold text-3xl mb-8 mt-2 lg:text-2xl">
+            ABOUT PROJECT
+          </h1>
+          <p className="w-[600px] text-xl lg:text-sm lg:px-2 lg:w-full">
             This project was created solely for academic purposes and has no
             affiliation with Riot Games. All rights to the game Valorant belong
             exclusively to Riot Games.
           </p>
-          <h1 className="font-bold text-4xl mb-8 mt-20">ABOUT DEVELOPER</h1>
-          <p className="w-[600px] text-xl">
+          <h1 className="font-bold text-3xl mb-8 mt-20 lg:text-2xl">
+            ABOUT DEVELOPER
+          </h1>
+          <p className="w-[600px] text-xl lg:text-sm lg:px-2 lg:w-full">
             Hello, I&apos;m Filipe Leoni! I&apos;m from Brazil and I&apos;m a
             Front-End Developer. This site was made to practice and improve my
             skills in React, Nextjs, tailwind and JavaScript. I take pride in my
@@ -66,10 +77,10 @@ const About = () => {
             credits and my social networks, you can connect to see my work and
             stay updated on my latest projects.
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex gap-10 py-20 justify-center">
+      <div className="flex gap-10 py-20 justify-center flex-wrap">
         {myArray.map((item) => (
           <AboutCard
             key={item.number}

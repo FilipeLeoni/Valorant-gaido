@@ -2,16 +2,21 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Map } from "../entities/map";
 
-export const MapCard = ({
+interface Props {
+  data: Map;
+}
+
+export const MapCard: React.FC<Props> = ({
   data: { displayIcon, displayName, splash },
-}: any) => {
+}) => {
   const slash = `//`;
   const [isHover, setIsHover] = useState(false);
 
   return (
     <motion.div
-      className="bg-gray w-[520px] h-[292px] rounded-xl relative"
+      className="bg-gray w-[520px] h-[292px] lg:w-80 lg:h-40 rounded-xl relative"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       initial={{ opacity: 0, scale: 0.5 }}
@@ -37,7 +42,7 @@ export const MapCard = ({
           hidden: { visibility: "hidden" },
         }}
         animate={isHover ? "show" : "hidden"}
-        className=" flex justify-center items-center rounded absolute top-0 bg-opacity-70 bg-black w-[520px] h-[292px] ease-in-out"
+        className=" flex justify-center items-center rounded absolute top-0 bg-opacity-70 bg-black w-[520px] h-[292px] ease-in-out lg:w-80 lg:h-40"
       >
         {displayIcon && (
           <Image src={displayIcon} alt="d" width="250px" height="250px" />
