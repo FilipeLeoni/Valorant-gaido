@@ -19,17 +19,19 @@ const Ranks = () => {
     })();
   }, []);
 
-  const validTiers = [
-    "IRON",
-    "BRONZE",
-    "SILVER",
-    "GOLD",
-    "PLATINUM",
-    "DIAMOND",
-    "ASCENDANT",
-    "IMMORTAL",
-    "RADIANT",
-  ];
+  const validTiersMemo = useMemo(() => {
+    return [
+      "IRON",
+      "BRONZE",
+      "SILVER",
+      "GOLD",
+      "PLATINUM",
+      "DIAMOND",
+      "ASCENDANT",
+      "IMMORTAL",
+      "RADIANT",
+    ];
+  }, []);
 
   const groupedRanksTiers = ranks[4]?.tiers.reduce((acc: any, next: any) => {
     if (acc[next.divisionName]) {
@@ -48,8 +50,9 @@ const Ranks = () => {
       return [];
     }
 
-    return validTiers.map((tier) => groupedRanksTiers[tier]);
-  }, [groupedRanksTiers, validTiers]);
+    return validTiersMemo.map((tier) => groupedRanksTiers[tier]);
+  }, [groupedRanksTiers, validTiersMemo]);
+
   return (
     <div className="min-h-screen min-w-screen flex flex-col ranks-bg items-center">
       <motion.h1

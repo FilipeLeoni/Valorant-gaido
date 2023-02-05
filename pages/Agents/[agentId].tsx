@@ -16,7 +16,7 @@ const AgentDetails: NextPage = ({ agent }: any) => {
 
       <motion.section className="min-h-screen bg-gray-darker relative overflow-hidden">
         <div className="flex w-full justify-center items-start gap-36 z-10 lg:flex-col lg:align-middle lg:items-center relative">
-          <div className="w-80 mt-8 md:w-44 blur-up lazyload">
+          <div className="w-80 mt-8 md:w-44">
             <Image
               src={agent.data.fullPortraitV2}
               width={300}
@@ -24,7 +24,7 @@ const AgentDetails: NextPage = ({ agent }: any) => {
               layout="responsive"
               objectFit="cover"
               alt="Weapon"
-              className="object-scale-down blur-up lazyload"
+              className="object-scale-down"
             />
           </div>
           <motion.div
