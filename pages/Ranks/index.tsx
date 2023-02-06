@@ -67,40 +67,45 @@ const Ranks = () => {
         <div className="flex gap-10 flex-wrap lg:justify-center lg:mb-24">
           {usedRanks.map((tier: any, index: number) => (
             <div className="flex-col flex items-center" key={index}>
-              <motion.div
-                className="text-xl text-white mb-5 border-b"
-                animate={{ x: [-20, 0], opacity: 1 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.3,
-                }}
-                initial={{ opacity: 0 }}
-              >
-                {tier[0].divisionName}
-              </motion.div>
-              {tier.map((item: any, index: number) => (
+              {tier && (
                 <motion.div
-                  key={index}
-                  className="w-20 p-1 flex justify-center items-center bg-[#82CFFF21] bg-opacity-20"
+                  className="text-xl text-white mb-5"
+                  animate={{ x: [-20, 0], opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.3,
+                  }}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <Image
-                      src={item.largeIcon}
-                      alt={item.tierName}
-                      layout="fixed"
-                      width={72}
-                      height={72}
-                    />
-                  </motion.div>
+                  {tier[0].divisionName}
                 </motion.div>
-              ))}
+              )}
+              {tier &&
+                tier.map((item: any, index: number) => (
+                  <motion.div
+                    key={index}
+                    className="w-20 p-1 flex justify-center items-center bg-[#82CFFF21] bg-opacity-20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8 }}
+                    >
+                      {item && (
+                        <Image
+                          src={item.largeIcon}
+                          alt={item.tierName}
+                          layout="fixed"
+                          width={72}
+                          height={72}
+                        />
+                      )}
+                    </motion.div>
+                  </motion.div>
+                ))}
             </div>
           ))}
         </div>
