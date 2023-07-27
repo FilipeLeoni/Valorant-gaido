@@ -11,8 +11,8 @@
 <p> Valorant Gaido é um projeto pessoal que estou desenvolvendo. Se trata de um guia não oficial de valorant, onde terá as informações sobre agentes, armas, mapas, ranks competitivo, etc.
 </p>
 
-## Progresso
-> :construction: Projeto em construção :construction:
+## Link do Website
+https://valorant-gaido.vercel.app/
 
 ## Visão geral
 <p> Um pouco de como está ficando o projeto</p>
